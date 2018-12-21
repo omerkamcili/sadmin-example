@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Modules\Admin;
 
 
 use OmerKamcili\Sadmin\Components\generic\SadminGenericMenuItem;

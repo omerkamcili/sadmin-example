@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Modules\Admin\User;
 
 
 use Route;
@@ -18,7 +18,7 @@ class UserRoute
      */
     public static function route(): void
     {
-        Route::prefix('/admin')->namespace('Admin\User')->group(function () {
+        Route::prefix('/admin')->namespace('\App\Http\Modules\Admin\User')->group(function () {
 
             Route::get('/users', 'UserController@index')->name('admin.users');
             Route::get('/add', 'UserController@add')->name('admin.addUser');

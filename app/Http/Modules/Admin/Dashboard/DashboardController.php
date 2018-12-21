@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Modules\Admin\Dashboard;
 
 
-use App\Http\Controllers\Admin\AdminBaseController;
+use App\Http\Modules\Admin\AdminBaseController;
 use Illuminate\Contracts\View\View;
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Dashboard;
+namespace App\Http\Modules\Admin\Dashboard;
 
 /**
  * Class DashboardPage

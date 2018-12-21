@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\User;
+namespace App\Http\Modules\Admin\User;
 
 
-use App\Http\Controllers\Admin\AdminBaseController;
+use App\Http\Modules\Admin\AdminBaseController;
 use OmerKamcili\Sadmin\Components\Form\SadminSelectBox;
 use OmerKamcili\Sadmin\Components\Form\SadminTextArea;
 use OmerKamcili\Sadmin\Components\Form\SadminTextInput;
