@@ -26,7 +26,6 @@ class DashboardController extends AdminBaseController
 
     }
 
-
     /**
      * @return View
      */

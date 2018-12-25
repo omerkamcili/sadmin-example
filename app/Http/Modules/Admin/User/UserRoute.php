@@ -24,6 +24,8 @@ class UserRoute
             Route::get('/add', 'UserController@add')->name('admin.addUser');
             Route::get('/roles', 'UserController@roles')->name('admin.roles');
 
+            Route::post('/user/save', 'UserController@save')->name('admin.saveUser');
+
         });
     }
 

@@ -4,6 +4,8 @@ namespace App\Http\Modules\Admin\User;
 
 
 use App\Http\Modules\Admin\AdminBaseController;
+use Illuminate\Http\Request;
+
 
 /**
  * Class UserController
@@ -31,6 +33,23 @@ class UserController extends AdminBaseController
     {
 
         return UserPage::add();
+
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function save(Request $request)
+    {
+        $this->validate($request, [
+            'name'          => 'required|between:3,30',
+            'email'         => 'required|email',
+            'password'      => 'required|between:6,12',
+            'passwordAgain' => 'required|between:6,12|same:password',
+            'address'       => 'required|min:5',
+        ]);
 
     }
 

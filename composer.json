@@ -45,7 +45,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "Tests\\": "tests/",
+      "OmerKamcili\\Sadmin\\Test\\": "packages/omerkamcili/sadmin/tests"
     }
   },
   "minimum-stability": "dev",

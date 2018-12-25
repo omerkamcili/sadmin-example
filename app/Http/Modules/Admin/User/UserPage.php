@@ -33,11 +33,10 @@ class UserPage extends AdminBaseController
     public static function add()
     {
 
-
         $page = new SadminFormPage();
         $page->title = 'ADD USER';
         $page->description = 'Pellentesque habitant similique voluptate eius odit, omnis egestas ullam facere exercitation diamlorem';
-        $page->action = '';
+        $page->action = route('admin.saveUser');
 
         $breadCrumb = self::breadCrumb();
         $breadCrumb->addItem('Add User');
@@ -47,7 +46,6 @@ class UserPage extends AdminBaseController
             new SadminTextInput([
                 'label'       => 'Name Surname',
                 'name'        => 'name',
-                'value'       => '',
                 'description' => _('Lobortis nec officiis cupidatat. Nemo felis alias sodales pretium'),
             ])
         );
@@ -56,7 +54,6 @@ class UserPage extends AdminBaseController
             new SadminTextInput([
                 'label' => 'Email',
                 'name'  => 'email',
-                'value' => '',
                 'type'  => 'email',
             ])
         );
@@ -65,7 +62,6 @@ class UserPage extends AdminBaseController
             new SadminTextInput([
                 'label' => 'Password',
                 'name'  => 'password',
-                'value' => '',
                 'type'  => 'password',
             ])
         );
@@ -74,7 +70,6 @@ class UserPage extends AdminBaseController
             new SadminTextInput([
                 'label' => 'Password Again',
                 'name'  => 'passwordAgain',
-                'value' => '',
                 'type'  => 'password',
             ])
         );
@@ -83,7 +78,6 @@ class UserPage extends AdminBaseController
             new SadminTextArea([
                 'label'       => 'Addres',
                 'name'        => 'address',
-                'value'       => '',
                 'description' => _('Please enter full address. State, street and numbers.'),
             ])
         );
@@ -92,7 +86,6 @@ class UserPage extends AdminBaseController
             new SadminSelectBox([
                 'label'       => 'Country',
                 'name'        => 'country',
-                'value'       => '',
                 'description' => _('Please select your country in list'),
             ])
         );
