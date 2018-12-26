@@ -9,6 +9,7 @@ use OmerKamcili\Sadmin\Components\Form\SadminTextArea;
 use OmerKamcili\Sadmin\Components\Form\SadminTextInput;
 use OmerKamcili\Sadmin\Components\Generic\SadminBreadCrumb;
 use OmerKamcili\Sadmin\Components\Page\SadminFormPage;
+use OmerKamcili\Sadmin\Components\Page\SadminTablePage;
 
 class UserPage extends AdminBaseController
 {
@@ -26,7 +27,37 @@ class UserPage extends AdminBaseController
     public static function index()
     {
 
-        return view('admin.blank');
+        $page = new SadminTablePage();
+        $page->title = 'USER LIST';
+        $page->description = 'Sem rem veritatis, iure nesciunt laboriosam dictumst fugiat.';
+
+        $breadCrumb = self::breadCrumb();
+        $breadCrumb->addItem('User List');
+        $page->setBreadCrumb($breadCrumb);
+
+        $page->setFields([
+            'id'       => _('ID'),
+            'name'     => _('Name'),
+            'email'    => _('Email'),
+            'progress' => _('Progress'),
+        ]);
+
+        $page->setData([
+            [
+                'id'       => uniqid(),
+                'name'     => rand(),
+                'email'    => rand(),
+                'progress' => rand(),
+            ],
+            [
+                'id'       => uniqid(),
+                'name'     => rand(),
+                'email'    => rand(),
+                'progress' => rand(),
+            ],
+        ]);
+
+        return $page;
 
     }
 
