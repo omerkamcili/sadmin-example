@@ -16,7 +16,7 @@ class UserController extends AdminBaseController
 {
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \OmerKamcili\Sadmin\Components\Page\TablePage
      */
     public function index()
     {
@@ -27,7 +27,7 @@ class UserController extends AdminBaseController
 
 
     /**
-     * @return \OmerKamcili\Sadmin\Components\Page\SadminFormPage
+     * @return \OmerKamcili\Sadmin\Components\Page\FormPage
      */
     public function add()
     {

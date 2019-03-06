@@ -3,16 +3,16 @@
 namespace App\Http\Modules\Admin;
 
 
-use OmerKamcili\Sadmin\Components\generic\SadminGenericMenuItem;
-use OmerKamcili\Sadmin\Components\Profile\SadminProfileMenu;
+use OmerKamcili\Sadmin\Components\Generic\GenericMenuItem;
+use OmerKamcili\Sadmin\Components\Profile\ProfileMenu;
 
-use OmerKamcili\Sadmin\Components\Sidebar\SadminMenuGroup;
-use OmerKamcili\Sadmin\Components\Sidebar\SadminMenuItem;
-use OmerKamcili\Sadmin\Components\Sidebar\SadminSideMenu;
-use OmerKamcili\Sadmin\SadminBaseController;
-use OmerKamcili\Sadmin\SadminBaseInterface;
+use OmerKamcili\Sadmin\Components\Sidebar\MenuGroup;
+use OmerKamcili\Sadmin\Components\Sidebar\MenuItem;
+use OmerKamcili\Sadmin\Components\Sidebar\SideMenu;
+use OmerKamcili\Sadmin\BaseController;
+use OmerKamcili\Sadmin\BaseInterface;
 
-use OmerKamcili\Sadmin\SadminIconFa;
+use OmerKamcili\Sadmin\Constants\Icons\IconFa;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -22,7 +22,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
  *
  * @package App\Http\Controllers\Admin
  */
-class AdminBaseController extends SadminBaseController implements SadminBaseInterface
+class AdminBaseController extends BaseController implements BaseInterface
 {
 
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -37,16 +37,16 @@ class AdminBaseController extends SadminBaseController implements SadminBaseInte
     }
 
     /**
-     * @return SadminSideMenu
+     * @return SideMenu
      */
-    public function sideBarMenu(): SadminSideMenu
+    public function sideBarMenu(): SideMenu
     {
 
-        $sideMenu = new SadminSideMenu();
+        $sideMenu = new SideMenu();
 
-        $sideMenu->add(new SadminMenuItem('Dashboard', route('admin.dashboard')));
+        $sideMenu->add(new MenuItem('Dashboard', route('admin.dashboard')));
 
-        $userGroup = new SadminMenuGroup('Users');
+        $userGroup = new MenuGroup('Users');
         $userGroup->add('Add User', route('admin.addUser'));
         $userGroup->add('User List', route('admin.users'));
         $userGroup->add('Roles', route('admin.roles'));
@@ -57,12 +57,12 @@ class AdminBaseController extends SadminBaseController implements SadminBaseInte
     }
 
     /**
-     * @return SadminProfileMenu
+     * @return ProfileMenu
      */
-    public function profilMenu(): SadminProfileMenu
+    public function profileMenu(): ProfileMenu
     {
-        $menu = new SadminProfileMenu();
-        $menu->add(new SadminGenericMenuItem('Logout', 'adsfasdf', SadminIconFa::AREA_CHART));
+        $menu = new ProfileMenu();
+        $menu->add(new GenericMenuItem('Logout', 'adsfasdf', IconFa::AREA_CHART));
 
         return $menu;
     }
